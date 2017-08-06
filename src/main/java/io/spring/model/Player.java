@@ -1,31 +1,27 @@
 package io.spring.model;
 
-import java.security.Timestamp;
-import java.text.SimpleDateFormat;
-
-
-/*import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;*/
-import org.springframework.boot.autoconfigure.domain.EntityScan;
+//import lombok.Data;
 import org.springframework.data.annotation.Id;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+import javax.persistence.Table;
 
 /**
  * Created by jayavardhans on 5/8/17.
  */
-//@Data
-public class Team {
-    @Id
+@Entity
+public class Player {
+    @javax.persistence.Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
     private String teamName;
     private String date;
 
-    public Team(){
+    public Player(){
     }
-    public Team(int id, String teamName, String date){
+    public Player(int id, String teamName, String date){
         this.id = id;
         this.teamName = teamName;
         this.date = date;
